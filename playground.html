@@ -405,12 +405,12 @@
                 <p>Dates are used to represent a date and to do basic calculations.</p>
                 <wb-expression type="date" ns="date" fn="now">today</wb-expression>
                 <wb-expression type="date" ns="date" fn="create">
-                    <wb-value type="number">yyyy</wb-value>
-                    <wb-value type="number">mm</wb-value>
-                    <wb-value type="number">dd</wb-value>
+                    <wb-value type="number" min="0" value="0">yyyy</wb-value>
+                    <wb-value type="number" min="0" value="0">mm</wb-value>
+                    <wb-value type="number" min="0" value="0">dd</wb-value>
                 </wb-expression>
                 <wb-expression type="date" ns="date" fn="addDays">
-                    <wb-value type="date">date</wb-value>
+                    <wb-value type="date" >date</wb-value>
                     <wb-value type="number">+/- days</wb-value>
                 </wb-expression>
                 <wb-expression type="date" ns="date" fn="addMonths">
