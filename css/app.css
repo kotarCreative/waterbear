@@ -307,7 +307,7 @@ wb-menu.size > header:after{ background-color: hsl(45, 50%, 50%); }
 wb-menu.text > header:after{ background-color: hsl(150, 50%, 50%); }
 wb-menu.vector > header:after{ background-color: hsl(75, 50%, 50%); }
 wb-menu.date > header:after{ background-color: hsl(55, 76%, 70%); }
-wb-menu.voice > header:after{ background-color: hsl(450, 95%, 20%);}
+wb-menu.voice > header:after{ background-color: hsl(450, 100%, 30%);}
 
 /* Accordion colors when open*/
 wb-menu.control[open=true] > header{ background-color: hsl(0, 53%, 56%); }
@@ -333,7 +333,7 @@ wb-menu.size[open=true] > header{ background-color: hsl(45, 50%, 50%); }
 wb-menu.text[open=true] > header{ background-color: hsl(150, 50%, 50%); }
 wb-menu.vector[open=true] > header{ background-color: hsl(75, 50%, 50%); }
 wb-menu.date[open=true] > header{ background-color: hsl(55, 76%, 70%); }
-wb-menu.voice[open=true] > header{ background-color: hsl(450, 95%, 20%);}
+wb-menu.voice[open=true] > header{ background-color: hsl(450, 100%, 30%);}
 
 /* Prevent selecting text while dragging */
 .dragging *{
