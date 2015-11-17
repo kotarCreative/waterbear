@@ -505,9 +505,9 @@
             <p>Dates are used to represent a date and to do basic calculations.</p>
                 <wb-expression type="date" ns="date" fn="now">today</wb-expression>
                 <wb-expression type="date" ns="date" fn="create">
-                    <wb-value type="number">yyyy</wb-value>
-                    <wb-value type="number">mm</wb-value>
-                    <wb-value type="number">dd</wb-value>
+                    <wb-value type="number" min="0">yyyy</wb-value>
+                    <wb-value type="number" min="0">mm</wb-value>
+                    <wb-value type="number" min="0">dd</wb-value>
                 </wb-expression>
                 <wb-expression type="date" ns="date" fn="addDays">
                     <wb-value type="date">date</wb-value>
@@ -1176,6 +1176,7 @@
             <wb-blocks id="voice">
                 <p>Create voice commands for your program</p>
                 <wb-context ns="voice" fn="create">
+                <wb-context ns="voice" fn="created">
                     <wb-row>
                         <wb-value type="text">Voice Command</wb-value>
                     </wb-row>

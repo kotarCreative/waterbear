@@ -93,6 +93,9 @@ function startScript(evt, opts) {
         return setImmediate(function asynchronousEmit() {
             Event.trigger(window, name, data);
         });
+    if(annyang) {
+      //  annyang.start();
+    }
     };
     // Now we wait for the playground to be ready. When animation triggered by setting the width above is finished it will call playgroundReady and start preloading.
 }
@@ -106,6 +109,9 @@ function stopScript(evt) {
     runtime.clear();
     evt.target.blur();
     runtime.getStage().focus();
+    if(annyang) {
+       // annyang.abort();
+    }
 }
 
 function stopAndClearScripts(){
