@@ -195,6 +195,14 @@ Event.on('#playgroundBox', transitionEvent, null, function(){
     // vector
     // voice
 var commands = {};
+
+function returnCommands() {
+    return commands;
+}
+
+function clearCommands() {
+    commands = {};
+}
     global.runtime = {
         startEventLoop: startEventLoop,
         stopEventLoop: stopEventLoop,
@@ -203,7 +211,8 @@ var commands = {};
         getStage: canvas,
         resetStage: resetCanvas,
         handleResize: handleResize,
-
+        returnCommands: returnCommands,
+        clearCommands: clearCommands,
         // All Contexts, for reference:
         // * control.eachFrame
         // * control.loopOver
@@ -1232,8 +1241,6 @@ var commands = {};
                 var script = this.gatherSteps();
                 commands[args] = function() {script.forEach(runBlock);}; 
                 annyang.addCommands(commands);
-                console.log(commands);
-                annyang.start();
             }
         }
     };

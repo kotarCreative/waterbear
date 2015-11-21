@@ -21,6 +21,16 @@
         };
     }
 
+    //function to check if javascript objects are empty. taken from https://www.codehive.io/boards/7A1s3P4
+    function isEmpty(object) {
+        for(var key in object) {
+            if(object.hasOwnProperty(key)){
+            return false;
+            }
+        }
+        return true;
+    }  
+    
     function isDrawingPath(){
         return drawingPath;
     }
@@ -1198,7 +1208,8 @@
         randomId: randomId,
         lastPoint: lastPoint,
         setLastPoint: setLastPoint,
-        isDrawingPath: isDrawingPath
+        isDrawingPath: isDrawingPath,
+        isEmpty: isEmpty
     };
 
 

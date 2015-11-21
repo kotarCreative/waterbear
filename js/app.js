@@ -76,7 +76,7 @@ Event.on(document.body, 'ui:click','.do-stop', stopScript);
 var options = {};
 function startScript(evt, opts) {
     // Do any necessary cleanup (e.g., clear event handlers).
-    stopScript(evt);
+    //stopScript(evt);
     runtime.resetStage();
     evt.target.blur();
     runtime.getStage().focus();
@@ -93,15 +93,15 @@ function startScript(evt, opts) {
         return setImmediate(function asynchronousEmit() {
             Event.trigger(window, name, data);
         });
-    if(annyang) {
-      //  annyang.start();
-    }
     };
     // Now we wait for the playground to be ready. When animation triggered by setting the width above is finished it will call playgroundReady and start preloading.
 }
 
 function playgroundReady(){
     preload().whenLoaded(runScript.bind(null, options));
+    if(util.isEmpty(runtime.returnCommands()) === false) {
+        annyang.start();
+    }
 }
 
 function stopScript(evt) {
@@ -109,9 +109,11 @@ function stopScript(evt) {
     runtime.clear();
     evt.target.blur();
     runtime.getStage().focus();
-    if(annyang) {
-       // annyang.abort();
-    }
+    if(util.isEmpty(runtime.returnCommands()) === false ) {
+        runtime.clearCommands();
+        annyang.removeCommands();
+        annyang.abort();
+    } 
 }
 
 function stopAndClearScripts(){
