@@ -1180,6 +1180,19 @@
                         <wb-value type="text">Voice Command</wb-value>
                     </wb-row>
                 </wb-context>
+                <wb-context ns="voice" fn="splat">
+                    <header>
+                    <wb-row>
+                        <wb-value type="text">Voice Command</wb-value>
+                        <wb-value>ending with variable</wb-value>
+                        <wb-local renameable="true">
+                                <wb-expression type="any" ns="control" fn="getVariable">
+                                    <wb-value type="text" allow="literal" value="answer"></wb-value>
+                                </wb-expression>
+                        </wb-local>
+                    </wb-row>
+                    </header>
+                </wb-context>
             </wb-blocks>
         </wb-blockbox>
         <wb-workspace>

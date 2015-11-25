@@ -1241,7 +1241,10 @@ function clearCommands() {
                 var script = this.gatherSteps();
                 commands[args] = function() {script.forEach(runBlock);}; 
                 annyang.addCommands(commands);
-            }
+            },
+            splat: function createAnnyangSplatExpr(args,variable){
+                var script = this.gatherSteps();
+            }   
         }
     };
 
